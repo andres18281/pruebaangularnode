@@ -1,0 +1,46 @@
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Logo</th>
+                <th>Nombre del producto</th>
+                <th>Descripción <i class="info-icon">i</i></th>
+                <th>Fecha de liberación <i class="info-icon">i</i></th>
+                <th>Fecha de reestructuración <i class="info-icon">i</i></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let product of products">
+                    <td><div class="logo-placeholder">{{product.logo}}</div></td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.date_release}}</td>
+                    <td>{{product.date_revision}}</td>
+                    <td>
+                        <div class="dropdown dropbtn">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <div class="dropdown-content">
+                                <a href="javascript:void(0)" (click)="showConfirmDeleteModal(product.id)">Eliminar</a>
+                                <a [routerLink]="['/edit', product.id]" href="#">Actualizar</a>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+<div class="results">
+    <p> Resultados {{cant}}</p>
+    <select>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+    </select>
+</div>
+
+<app-modal></app-modal>

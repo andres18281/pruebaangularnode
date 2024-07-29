@@ -1,0 +1,9 @@
+<div class="modal" [ngClass]="{'show': showModal}">
+    <div class="modal-content">
+      <p>¿Estás seguro de eliminar el producto <span id="product-title">{{ productId }}</span>?</p>
+      <div class="modal-actions">
+        <button class="btn cancel" (click)="closeModal()">Cancelar</button>
+        <button class="btn confirm" (click)="Confirmar()">Confirmar</button>
+      </div>
+    </div>
+  </div>
